@@ -7,7 +7,7 @@ By the end of this lesson, you will be able to:
 2. **Create** CircleCI workflows with build, test, and publish jobs
 3. **Configure** PostgreSQL service in CircleCI for running tests
 4. **Push** Docker images to Docker Hub automatically from a CI pipeline
-5. **Deploy** the CI-built image and a PostgreSQL database to Railway on your own (challenge)
+5. **Deploy** the CI-built image and a PostgreSQL database to a cloud platform (Render or Railway) on your own (challenge)
 
 ---
 
@@ -18,7 +18,7 @@ Before starting this coaching session, ensure you have:
 ### ✅ Completed Previous Lessons
 - [ ] Lesson 4.7: Continuous Integration (CircleCI basics)
 - [ ] Lesson 4.8: Containerized simple-crm-lite application
-- [ ] Lesson 4.10: Deployed to Railway from Docker Hub, with PostgreSQL (for the Part 6 challenge)
+- [ ] Lesson 4.10: Deployed to Render or Railway from Docker Hub, with PostgreSQL (for the Part 6 challenge)
 
 ### ✅ Accounts Ready
 - [ ] GitHub account (free)
@@ -52,7 +52,7 @@ In Lesson 4.7, you learned Continuous Integration using CircleCI with the devops
 - Every code push triggers automatic testing
 - Bugs are caught immediately
 - Docker images are built automatically
-- Ready for deployment - you'll deploy it to Railway at the end of this lesson
+- Ready for deployment - you'll deploy it to Render or Railway at the end of this lesson
 
 ---
 
@@ -878,13 +878,13 @@ docker rm simple-crm-app simple-crm-db
 
 ---
 
-## Part 6 - Challenge: Deploy simple-crm-lite to Railway
+## Part 6 - Challenge: Deploy simple-crm-lite to the Cloud
 
 Your CI pipeline has published a Docker image of simple-crm-lite to Docker Hub. **It's ready for deployment!**
 
-Deploy it to Railway, together with a PostgreSQL database.
+Deploy it to the same platform you used in Lesson 4.10 (Render or Railway), together with a PostgreSQL database.
 
-> **No step-by-step instructions this time.** Use **Lesson 4.10** as your reference: Part 3 (deploy to Railway from Docker Hub) and Part 4 (add a PostgreSQL database and connect it). Working it out yourself is the point of this challenge.
+> **No step-by-step instructions this time.** Use **Lesson 4.10** as your reference: Part 3 (deploy your Docker image to a cloud platform), Part 4 (add a PostgreSQL database and connect it), and your platform guide (`render.md` or `railway.md` in the Lesson 4.10 repository). Working it out yourself is the point of this challenge.
 
 **Your image:**
 
@@ -894,12 +894,12 @@ YOUR-DOCKERHUB-USERNAME/simple-crm-lite:latest
 
 **You're done when:**
 
-- [ ] simple-crm-lite and a PostgreSQL database run in the same Railway project
-- [ ] Your app has a public Railway URL
-- [ ] `GET /customers` on your Railway URL returns JSON (an empty list `[]` at first)
+- [ ] simple-crm-lite and a PostgreSQL database run on the same platform (same Railway project, or same Render region)
+- [ ] Your app has a public URL
+- [ ] `GET /customers` on your public URL returns JSON (an empty list `[]` at first)
 - [ ] You can create a customer with `POST /customers` and see it in `GET /customers`
 
-**Tip:** Use the same requests you used to test the API in Lesson 4.8 - just replace `http://localhost:8080` with your Railway URL.
+**Tip:** Use the same requests you used to test the API in Lesson 4.8 - just replace `http://localhost:8080` with your public URL.
 
 ---
 
@@ -1043,7 +1043,7 @@ curl http://localhost:8080/customers
 5. ✅ Reused your Docker Hub credentials securely with a CircleCI context
 6. ✅ Ran successful CI pipeline
 7. ✅ Published Docker image automatically
-8. ✅ (Challenge) Deployed simple-crm-lite and PostgreSQL to Railway
+8. ✅ (Challenge) Deployed simple-crm-lite and PostgreSQL to Render or Railway
 
 ### Key Takeaways
 
@@ -1060,7 +1060,7 @@ curl http://localhost:8080/customers
 **3. Docker + CI = Deployment Ready:**
 - Every successful build creates a Docker image
 - Image is on Docker Hub, ready to deploy
-- You deployed it to Railway yourself, using Lesson 4.10 as your guide
+- You deployed it to Render or Railway yourself, using Lesson 4.10 as your guide
 
 **4. Professional workflow:**
 - This is how real companies work
