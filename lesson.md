@@ -136,6 +136,12 @@ git push -u origin main
 
 **Verify:** Go to your GitHub repository in browser - you should see all your files!
 
+If you would prefer to use my `simple-crm-lite` sample, you may download it here: 
+
+```
+curl -L -O https://github.com/aie-devops/simple-crm-lite/archive/refs/tags/v4.11.0.zip
+```
+
 ---
 
 ### Step 4: Review Project Structure
